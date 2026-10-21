@@ -124,7 +124,14 @@ export default async function handler(req, res) {
       });
     }
 
-    const answer = result.choices?.[0]?.message?.content;
+  
+const message = result.choices?.[0]?.message;
+const answer = message?.content;
+
+console.log("OpenRouter model:", result.model);
+console.log("OpenRouter finish reason:", result.choices?.[0]?.finish_reason);
+console.log("OpenRouter response type:", typeof answer);
+
 
     if (typeof answer !== "string" || !answer.trim()) {
       return res.status(502).json({
