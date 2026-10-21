@@ -81,7 +81,6 @@ export default async function handler(req, res) {
           "Content-Type": "application/json",
           "X-OpenRouter-Title": "SchoolGuideAI"
         },
-        },
         body: JSON.stringify({
           model: "openrouter/free",
           messages: [
